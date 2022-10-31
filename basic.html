@@ -1,0 +1,11 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.js" integrity="sha512-iWPnCISAd/J+ZacwV2mbNLCaPGRrRo5OS81lKTVPtRg1wGTC20Cfmp5Us5RcbLv42QLdbAWl0MI57yox5VecQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+    const socket = io('http://localhost:3000')
+    socket.on('connect', (data)=>{
+        socket.on('welcome', (message)=>{ 
+            console.log(message);
+        })
+        socket.emit('message', {data: 'I am so excited I am Connected! It is like Christmas'})
+    })
+</script>
